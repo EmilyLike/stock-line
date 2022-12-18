@@ -9,28 +9,20 @@ import {
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '/login'
-  },
-  {
-    path: '/home',
-    name: 'home',
-    meta: {
-      type: 'home'
-    },
-    component: () => import('@/views/home')
-  },
-  {
-    path: '/login',
-    name: 'login',
-    meta: {
-      type: 'login'
-    },
-    component: () => import('@/views/login')
-  },
-  {
-    path: '/:pathMatch(.*)*',
-    name: '404',
-    component: () => import('@/views/404')
+    redirect: '/allStock',
+    component: () => import('@/views/allStock'),
+    children: [
+      {
+        path: '/allStock',
+        name: '全部股票',
+        component: () => import('@/views/allStock')
+      },
+      {
+        path: '/singleStock',
+        name: '单个股票',
+        component: () => import('@/views/singleStock')
+      }
+    ]
   }
 ]
 

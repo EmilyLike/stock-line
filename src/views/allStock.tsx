@@ -4,6 +4,6 @@ import { useRouter, Router } from 'vue-router'
 
 export default defineComponent({
   setup() {
-    return () => <div class="main"></div>
+    return () => <div class="main">111111</div>
   }
 })
